@@ -11,9 +11,9 @@ tries = 0
 win = False 
 
 
-name = input("Hello, What is your username?")
+name = input("Hello, What is your username? ")
 
-print("Hello " + name + "." )
+print("Hello " + name.capitalize() + "." )
 
 question = input("Would you like to play a game? [Y/N] ")
 if question.lower() == "n": 
@@ -27,14 +27,17 @@ if question.lower() == "y":
         if tries == 5:
             print("You failed to guess the number within 5 tries, game over.")
             break
-        if guess == number:
+        if guess not in range(1,21):
+            print("Sorry, that guess does not fall between 1-20.")
+        elif guess == number:
             win = True    
         elif guess < number:
             print("Guess Higher")
         elif guess > number:
             print("Guess Lower")
 
-        
-            print("Congrats, you guessed correctly. The number was indeed {}".format(number))
-            print("it had taken you {} tries".format(tries))
+
+if win == True:
+    print("Congrats, you guessed correctly. The number was indeed {}".format(number))
+    print("and it took you {} tries".format(tries))
 
