@@ -10,7 +10,6 @@ number = random.randint(1, 20)
 tries = 0
 win = False 
 
-
 name = input("Hello, What is your username? ")
 
 print("Hello " + name.capitalize() + "." )
@@ -35,7 +34,6 @@ if question.lower() == "y":
             print("Guess Higher")
         elif guess > number:
             print("Guess Lower")
-
 
 if win == True:
     print("Congrats, you guessed correctly. The number was indeed {}".format(number))
